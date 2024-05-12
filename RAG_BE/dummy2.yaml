@@ -1,0 +1,25 @@
+IndexerConfig:
+  algo: cosine
+  chunk_overlap: 64
+  chunk_size: 512
+  collection_name: trial_collection
+  doc_dir: ./target_dir
+  persist_path: ./persist
+  top_n_result: 5
+LLM_config:
+  max_tokens: 1000
+  n_ctx: 4096
+  n_gpu_layers: 33
+  prompt_template: '<s>[INST]Given the context below
+
+    {context}
+
+    As an entusiastic and uplifting sales representative, narrate the answer to the query without using any prior known information.
+
+    query:
+
+    {query}
+
+    answer:'
+  rephraser_path: models/mistral-7b-instruct-v0.2.Q4_K_M.gguf
+  stop: ["</s."]
